@@ -1,0 +1,20 @@
+wget ftp://ftp.jgi-psf.org/pub/JGI_data/Lottia_gigantea/v1.0/Lotgi1_GeneModels_FilteredModels1_aa.fasta.gz
+
+-- used filtered protein gene models for my initial reference
+
+
+sbatch blastBatch
+
+first, make an non-interleaved file
+make a blastdb of the assembled transcripts
+then do blastx and tblastn
+
+
+sbatch contig_filter_batch
+
+finds best hits and identifies a list of rbbhs
+then saves all non-overlapping sequences of the rbbhs, only if the best hit of the non-overlapping sequences is the same protein.
+
+creates '.filtered_results' -- blast info about the contigs you wanted to keep
+creates '_phylo_contigs.fa' -- contig file of the sequences that passed the rbbh filter
+

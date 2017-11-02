@@ -1,0 +1,7 @@
+map reads and generate vcf files, used picard tools mark duplicates
+
+sbatch mappingbatch1
+sbatch mappingbatch2
+sbatch mappingbatch3
+sbatch mappingbatch_ssr
+sbatch mappingbatch_single

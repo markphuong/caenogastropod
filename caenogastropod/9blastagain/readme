@@ -1,0 +1,19 @@
+python getreference.py
+
+-- takes every file in /pylon2/bi4s86p/phuong/caenogastropod/8makenewref/newrefs_16/ and opens those fasta files, and generates 'mynewlottiaref.fa'
+
+python make_final_ref.py
+
+-- takes in mynewlottiaref.fa and writes out to final_lottia_ref.fa
+
+any sequences found in Lotgi1..NI and not in mynewlottiaref are written to final_lottia_ref.fa
+
+I do not keep header information, the header is just the Lotgi protein ID #
+
+sbatch blastbatch1
+sbatch blastbatch2
+sbatch blastbatch3
+sbatch blastbatch4
+sbatch contig_filter_batch
+
+then do reciprocal blasting and re-generate the phylo contigs files

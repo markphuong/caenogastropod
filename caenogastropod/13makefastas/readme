@@ -1,0 +1,5 @@
+sbatch makefastabatch
+- from the v2.fa files, put all sequences in correct oritentation, and write out a translated fasta file and an untranslated fastafile
+
+python makesomethingNotInterleaved.py Lotgi1_GeneModels_FilteredModels1_aa.fasta Lotgi1_GeneModels_FilteredModels1_aa.fasta.NI
+python makesomethingNotInterleaved.py Lotgi1_GeneModels_FilteredModels1_nt.fasta Lotgi1_GeneModels_FilteredModels1_nt.fasta.NI

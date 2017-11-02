@@ -1,0 +1,60 @@
+######## unzip files
+
+sbatch 0unzipreads_caeno
+
+copied all files and renamed the headers. using 0UnzipAllReadsAndRemoveReadsThatFailedIlluminaPipeline.py
+
+
+
+######## extra files that I removed or deleted or changed
+
+rm Peripatopsis-mosselyi-ELMW3350-Hogsback_R1.fq.gz Peripatopsis-mosselyi-ELMW3350-Hogsback_R2.fq.gz
+
+rm CAENO-Pleurobranchis-peroni-MVR13_R1.fq.gz
+
+mv VETI-Helicinidae-Pleuropoma-gladstonensis_R1.fq.gz NERITI-Helicinidae-Pleuropoma-gladstonensis_R1.fq.gz
+mv VETI-Helicinidae-Pleuropoma-gladstonensis_R2.fq.gz NERITI-Helicinidae-Pleuropoma-gladstonensis_R2.fq.gz
+
+
+######## prep adapter files and mapfiles
+
+python make_map_file.py
+
+makes mapfile_caeno by trying to take all the species names of every file and writing it to mapfile_caeno
+
+
+you got adapters.txt from the bbmap software package (has full list of truseq and nextera adapters from all kits or something)
+
+python add_r.py -- used this script to reverse complement all but the first sequence, and then added all sequences to 'adapters_caeno_7_8_2016.fa'
+
+this script takes:
+
+1. adapters_reversed.fa - I reverse complemented at another website
+
+and creates:
+
+1. adapters_reversed_changed_headers.fa -- added this to 'adapters_caeno_7_8_2016.fa'
+
+this script added an 'r' to every header, because you were able to reverse complement all the sequences, but unable to change the header names.
+
+######### trimmomatic
+
+sbatch trim_caeno
+sbatch trim_caeno_single
+sbatch trim_caeno_ssr
+
+creates all the 'final1.fq' and 'final2.fq' files
+
+trims files using adapters_caeno_7_8_2016.fa file and puts all unpaired reads into read1 for assembly
+
+
+
+
+
+
+
+
+
+
+
+

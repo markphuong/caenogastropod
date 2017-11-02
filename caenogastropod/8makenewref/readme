@@ -1,0 +1,32 @@
+python makesomethingNotInterleaved.py Lotgi1_GeneMods_FilteredModels1_aa.fasta Lotgi1_GeneModels_FilteredModels1_aa.fasta.NI
+
+
+look at 108787
+
+
+
+python makebatchfiles.py
+
+-- makes all the newrefbatch# files
+
+python makemapfile.py
+
+--makes all the mapfile# files
+
+makenewref.py:
+
+goes through every lottia protein file containing the RBBH full sequences.
+
+goes through trans decoder and produces a set of predicted ORFs
+refines headers of the transdecoder output to make it more easily parse-able
+and then does a blastp to the original lottia protein, so you can find a protein from one of your transcriptome species in the same reading frame, but perhaps extended because sometimes the lottia reference is fragmented/truncated
+
+you pick the sequence that is in the same frame as the lottia sequence, spans the full length of the original lottia sequence, and is longer than the original lottia sequence.
+
+this script uses:
+
+1. makesomethingNotInterleaved.py
+2. TransDecoder
+3. blastp
+4. refine_headers.py
+5. parse_blast_to_make_new_reference.py

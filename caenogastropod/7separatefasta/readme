@@ -1,0 +1,17 @@
+make individual files for all lottia loci
+reverse complement if necessary
+include the -entire- sequence
+
+outputs 16851 fasta files, 
+
+each fasta file contain sequences of the rbbh + any fragmentary sequences for that locus
+
+each fasta sequence header will contain:
+
+1. trinity contig name
+2. start prot
+3. end prot
+4. lottia ID
+5. start contig
+6. end contig
+7. species ID

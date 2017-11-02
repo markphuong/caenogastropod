@@ -1,0 +1,16 @@
+need to merge reads for proper coverage estimates
+to reran trimmomatic and added flash to it
+
+to create the following files:
+
+1. final1.fq
+2. final2.fq
+3. finalunpaired.fq
+also had trimm and flash output and stderr
+
+did this for 83 samples because hinea is single end
+
+sbatch trim_caeno1
+sbatch trim_caeno2
+sbatch trim_caeno3
+sbatch trim_caeno_ssr

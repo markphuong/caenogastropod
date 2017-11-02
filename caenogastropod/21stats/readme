@@ -1,0 +1,5 @@
+python countcompleteness.py adnan_only.nexus adnan_completeness adnan
+python countcompleteness.py all_files.nexus all_completeness all
+python countcompleteness.py greater_than_50.nexus over50_completeness over50
+
+

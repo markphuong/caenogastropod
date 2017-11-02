@@ -1,0 +1,6 @@
+sbatch consensusbatch
+
+created consensuses for each species in each alignment.
+if there was > 1 mismatch, I trimmed sequences sequenailly from all 4 possible sides (of a 2 sequence comparison) and picked the trimming that deleted the fewest AAs
+
+

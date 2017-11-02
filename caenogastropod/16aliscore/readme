@@ -1,0 +1,39 @@
+python makemapfile.py
+
+-- creates mapfile of 250 samples
+
+python makebatchfiles.py
+
+sbatch aliscorebatch0-17 
+
+runs makesomethingNotInterleaved_modified.py
+
+needed to change headers for aliscore to work, so changed all headers to numbers and saved the mapping of the names in:
+creates '.namemap' files -- 
+
+
+after creating the mapfile, it also changes all '-' to '?' for aliscore and creates the '.NI' file
+then runs aliscore, which produces the rest of the files.
+
+most important file is the '_List_random.txt', which gives a list of columns to exclude
+
+after running aliscore, you copied ALICUT to the results file and ran it from there
+
+cp ALICUT_V2.3.pl /pylon2/bi4s86p/phuong/caenogastropod/15aliscore/results
+perl ALICUT_V2.3.pl 
+
+then typed 's' to start the program and create the 'ALICUT' files
+
+
+sbatch reformatbatch
+
+
+reformats all files
+
+some files do not have ALICUT files because no columns/sites were filtered, so processed files depending on that
+
+will wrap around reformatfiles.py
+
+which takes the mapfile, the ALICUT file or the original .NI file, and then outputs the names mapped back and creates '_AA.fasta.aligned.aliscore.filtered.NI'
+
+

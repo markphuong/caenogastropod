@@ -1,0 +1,39 @@
+sbatch fasta2nexusbatch
+
+--convert all files to nexus -- the ones that passed the tree filter
+
+2824 -- number of loci that passed the tree filter, and also the pdist filter
+
+
+sbatch generateAlignmentsbatch
+
+generates alignments for:
+
+1. only adnan loci
+2. loci having at least 50% of the taxa
+3. all loci
+
+adnan only
+387
+
+all
+2824
+
+greater than 50
+2715
+
+sbatch phylipbatch
+
+make phylip files
+also change all ambiguous characters to ?
+
+##############################
+
+sbatch phylipbatchpartitionfinder
+
+converted all names to numbers and created sequential phylip files so that partition finder would take them
+
+python createPartitionFinderConfig.py
+
+create contif files for each supermatrix and move them into their respective pf directies
+

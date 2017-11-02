@@ -1,0 +1,19 @@
+########### fix file names for srr reads
+
+sbatch sedbatch
+sbatch sedbatch_single
+
+fixes file names for srr reads (needs a /1 and a /2) and moves the original files to srr_reads
+
+
+######## run trinity, can only run 5 at a time per batch file
+
+split mapfile_caeno (which only contains adnan's samples) into three files to have more assemblies assemble at once
+
+
+sbatch trinitybatch1
+sbatch trinitybatch2
+sbatch trinitybatch3
+sbatch trinitybatch_single #hinea
+sbatch trinitybatch_srr #from sra, different input reads
+sbatch trinitybatch_finish #xsede failed, had to do last few samples

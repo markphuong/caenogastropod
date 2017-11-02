@@ -1,0 +1,3 @@
+sbatch align_batch
+
+align using mafft with Lotgi protein IDs if the protein was (a) part of the original 501 or (b) had at least 50% of the taxa represented
